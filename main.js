@@ -55,6 +55,10 @@ var contactStorage = {
 
 function followstock(e){
   e.stopPropagation();
-  
+ var slectedStock = $(this).closest('tr').find('.symbolname')[0].textContent;
+ // array.push(slectedStock)
+ var contacts = contactStorage.get();
+    contacts.push(slectedStock);
+    contactStorage.write(contacts)
 
 }
